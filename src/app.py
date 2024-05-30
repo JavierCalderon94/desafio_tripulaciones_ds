@@ -456,7 +456,7 @@ elif seleccion == "Referencias":
         title_font=dict(family="Lato", size=24, color="#002766"),
         legend_font=dict(family="Lato", size=14, color="#002766"),
         width=800,  # Ancho del gráfico
-        height=570,  # Alto del gráfico
+        height=700,  # Alto del gráfico
     )
 
     # Mostrar el gráfico en Streamlit
