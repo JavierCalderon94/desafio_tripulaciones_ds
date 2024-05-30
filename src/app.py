@@ -455,7 +455,7 @@ elif seleccion == "Referencias":
         title='¿A través de qué plataformas nos han conocido nuestros clientes?',
         title_font=dict(family="Lato", size=24, color="#002766"),
         legend_font=dict(family="Lato", size=14, color="#002766"),
-        width=800,  # Ancho del gráfico
+        width=900,  # Ancho del gráfico
         height=700,  # Alto del gráfico
     )
 
