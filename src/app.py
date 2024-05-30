@@ -243,7 +243,7 @@ elif seleccion == "Facturación":
     if evolucion_ventas:
 
         # Generar la lista de meses desde enero 2022 hasta diciembre 2023
-        meses = ["Sin filtrar"] + pd.date_range(start="2022-01-01", end="2023-12-31", freq='MS').strftime("%Y-%m").tolist()
+        meses = [sin_filtro] + pd.date_range(start="2022-01-01", end="2023-12-31", freq='MS').strftime("%Y-%m").tolist()
         selected_month = st.sidebar.selectbox("Seleccione un mes para visualizar las ventas posteriores:", meses)
 
         # Consulta SQL para obtener todos los registros de facturas, ordenados por fecha
@@ -253,7 +253,7 @@ elif seleccion == "Facturación":
         df["fecha"] = pd.to_datetime(df['fecha'])
 
         # Filtrar el DataFrame según el mes seleccionado
-        if selected_month != "Sin filtrar":
+        if selected_month != sin_filtro:
             df = df[df["fecha"]>selected_month] 
 
         # Crear el gráfico de líneas para la evolución de la facturación
@@ -287,16 +287,16 @@ elif seleccion == "Facturación":
                     INNER JOIN servicios_generales ON servicios_generales.id_serviciog = servicios_especificos.id_serviciog                 
                     '''
         df = obtener_datos(host, port, dbname, user, password, query)
-
+        
         # Generar lista de países disponibles para el filtro
         paises = [sin_filtro] + sorted(list(df["pais"].unique()))
 
         selected_country = st.sidebar.selectbox("Seleccione un pais para ver sus servicios más vendidos:", paises)
 
         # Filtrar el DataFrame según el país seleccionado
-        if selected_country != "Sin filtrar":
+        if selected_country != sin_filtro:
             df = df[df["pais"]==selected_country]
-
+        
         ingresos_por_servicio = df.groupby("nombre_servicio")["precio"].sum().sort_values(ascending=False)
         num_bars = len(ingresos_por_servicio)
 
