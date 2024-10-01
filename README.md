@@ -127,3 +127,5 @@ El panel de control que se desplegará a través de Streamlit proporciona las si
 
 
 Al iniciar la aplicación, se mostrará un menú lateral con las diferentes opciones disponibles. Cada opción desplegará gráficos interactivos que permitirán analizar los datos de manera visual y sencilla. Los gráficos pueden ser filtrados utilizando los menús desplegables y checkboxes en el panel lateral.
+
+**Equipo de Data Science: Javier Calderón y Teresa Terol**
